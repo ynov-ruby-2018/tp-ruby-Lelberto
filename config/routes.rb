@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root 'homepage#index'
+  root to: redirect("/#{I18n.default_locale}")
 
   scope "/:locale" do
     root 'homepage#index'
+    devise_for :users
   end
 end
