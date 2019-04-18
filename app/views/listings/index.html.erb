@@ -1,31 +1,59 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listings</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @listings.each do |listing| %>
-      <tr>
-        <td><%= listing.title %></td>
-        <td><%= listing.description %></td>
-        <td><%= listing.price %></td>
-        <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<div class="container">
+  <%-# @listing.each do |listing| %>
+  <div style="border:solid 1px; padding: 2%;"> 
+    <h3>Titre de l'annonce</h3>
+    <div class="d-flex justify-content-start align-items-center" >
+      <a>Date + heure</a>
+      <span class="badge badge-secondary">New</span>
+    </div>
+    <div class="row">
+      <div class="col-2">
+      <img src="/assets/images/background.jpg">
+      </div>
+      <div class="col">
+        <a class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+								laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+								velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+								in culpa qui officia deserunt mollit anim id est laborum.</a>                 
+        <div class="d-flex justify-content-around align-items-center w-100" >
+          <a>500 €</a>
+          <button class="btn btn-warning my-2 my-sm-0" type="button" data-toggle="modal" data-target="#exampleModal"><%= t :btn_contact_listing %></button>   
+        </div>
+      </div> 
+    </div>
+    </div>
+  <%-#end %>
+  <br>
 
 <%= link_to 'New Listing', new_listing_path %>
+</div>
+
+
+
+  <%-#= do listing.title %>
+  <!-- MODAL -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+	aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel"><%= t :btn_contact_listing %></h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form>
+          <div class="form-group">
+            <label><%= t :your_message %></label>
+            <textarea class="form-control" id="exampleFormControlTextarea" rows="6"></textarea>
+          </div>
+        </form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t :send %></button>
+			</div>
+		</div>
+	</div>
+</div>

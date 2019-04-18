@@ -1,3 +1,10 @@
-<h1>Homepage#home</h1>
-<p>Find me in app/views/homepage/home.html.erb</p>
-<p><%= t :hello %></p>
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1><%= t :ask_search %></h1>
+        <form class="form-inline">
+            <input class="form-control mr-lg-2" type="search" placeholder="<%= t :input_search %>" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><%= t :search %></button>
+        </form> 
+    </div>
+</section>
+    
