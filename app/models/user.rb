@@ -10,6 +10,8 @@ class User < ApplicationRecord
   # Définit le rôle par défaut si l'utilisateur vient d'être créé
   after_initialize :set_default_role, :if => :new_record?
 
+  has_many :listings
+
   # Définit le rôle par défaut
   def set_default_role
     self.role ||= :user
