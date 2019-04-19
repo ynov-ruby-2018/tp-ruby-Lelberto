@@ -1,29 +1,25 @@
 <div class="container">
-  <%-# @listing.each do |listing| %>
+  <% @listings.each do |listing| %>
   <div style="border:solid 1px; padding: 2%;"> 
-    <h3>Titre de l'annonce</h3>
+    <h3><% listing.title %></h3>
     <div class="d-flex justify-content-start align-items-center" >
-      <a>Date + heure</a>
-      <span class="badge badge-secondary">New</span>
+   <%-#   <a><% listing.timestamps </a>#-%>
+      <span class="badge badge-secondary"><% listing.title %></span>
     </div>
     <div class="row">
       <div class="col-2">
       <img src="/assets/images/background.jpg">
       </div>
       <div class="col">
-        <a class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-								incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-								laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-								velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-								in culpa qui officia deserunt mollit anim id est laborum.</a>                 
+        <a class="text-justify"><% listing.description %></a>                 
         <div class="d-flex justify-content-around align-items-center w-100" >
-          <a>500 €</a>
+          <a><% listing.price %></a>
           <button class="btn btn-warning my-2 my-sm-0" type="button" data-toggle="modal" data-target="#exampleModal"><%= t :btn_contact_listing %></button>   
         </div>
       </div> 
     </div>
     </div>
-  <%-#end %>
+  <% end %>
   <br>
 
 <%= link_to 'New Listing', new_listing_path %>
