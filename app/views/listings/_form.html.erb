@@ -16,14 +16,9 @@
       <%= form.label :title %> <br />
       <%= form.text_field :title %>
     </div>
-
     <div class="field form-group">
-      <%= form.label :category %> <br />
-      <%= form.select(:category_id) do %>
-        <% [['Lisbon', 1], ['Madrid', 2]].each do |c| -%>
-          <%= content_tag(:option, c.first, value: c.last) %>
-        <% end %>
-      <% end %>
+      <%= form.label :Category %> <br />
+      <%= collection_select(:invoice, :category_id, Category.all, :id, :name) %> 
     </div>
 
     <div class="field form-group">
