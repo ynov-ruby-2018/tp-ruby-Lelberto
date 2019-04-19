@@ -6,7 +6,7 @@
       <h2><%= t :create_account %></h2>
 
       <form>
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= form_for(resource, as: @user, url: registration_path(@user)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
 
         <%-# Email -%>
@@ -18,13 +18,13 @@
         <%-# First_name -%>
         <div class="field form-group">
           <%= f.label :first_name %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
         </div>
         
         <%-# Last_name -%>
         <div class="field form-group">
           <%= f.label :last_name %><br/>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
         </div>
 
         <div class="field form-group">
