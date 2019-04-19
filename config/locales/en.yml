@@ -43,6 +43,7 @@ en:
   send: "Send"
   create_account: "Create your account for free"
   login: "Log in"
+  logout: "Log out"
   form_tile: "Title"
   form_category: "Category"
   form_description: "Description"

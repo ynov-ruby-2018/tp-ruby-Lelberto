@@ -12,6 +12,7 @@ fr:
   send: "Envoyer"
   create_account: "Créé votre compte gratuitement"
   login: "Connectez-vous"
+  logout: "Déconnectez-vous"
   form_tile: "Titre"
   form_category: "Catégori"
   form_description: "Descriptionfr"
