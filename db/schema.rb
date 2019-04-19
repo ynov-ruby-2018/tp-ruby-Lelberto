@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_18_174238) do
+ActiveRecord::Schema.define(version: 2019_04_19_183239) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 2019_04_18_174238) do
     t.integer "user_id"
     t.index ["category_id"], name: "index_listings_on_category_id"
     t.index ["user_id"], name: "index_listings_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.integer "listing_id"
+    t.integer "sender_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id"], name: "index_messages_on_listing_id"
+    t.index ["sender_id"], name: "index_messages_on_sender_id"
   end
 
   create_table "users", force: :cascade do |t|
